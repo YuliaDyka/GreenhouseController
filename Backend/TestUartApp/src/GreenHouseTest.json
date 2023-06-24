@@ -1,0 +1,39 @@
+" // -------------------------------- SENSORS ------------------------------------"
+" // Get sensors request"
+{"Type":0,"ID":0}
+"// Get sensors response
+{"Type":1,"ID":0,"Result":0,"Temp1":22.43,"Temp2":21.05,"Light1":347,"Light2":402}
+
+" // -------------------------------- FAN ------------------------------------
+"// Set FAN request:
+{"Type":0,"ID":1,"CPS":120}
+"// Set FAN response:
+{"Type":1,"ID":1,"Result":1}
+
+"// Get FAN info request:
+{"Type":0,"ID":4}
+"// Get FAN info response:
+{"Type":1,"ID":4,"Result":0,"CPS":104}
+
+" // -------------------------------- HATCH ------------------------------------
+"// Set HATCH position request:
+{"Type":0,"ID":10,"HPos":67}
+"// Set HATCH position response:
+{"Type":1,"ID":10,"Result":1}
+
+"// Get HATCH position request:
+{"Type":0,"ID":11}
+"// Get HATCH position response:
+{"Type":1,"ID":11,"Result":0,"HPos":60}
+
+" // -------------------------------- LEDS ------------------------------------
+"// Set LEDS request:
+{"Type":0,"ID":6,"R":255,"G":100,"B":100,"Br":95}
+"// Set LEDS response:
+{"Type":1,"ID":6,"Result":0} 
+
+"// Get LEDS request:
+{"Type":0,"ID":8}
+"// Get LEDS response:
+{"Type":1,"ID":8,"Result":0,"R":255,"G":100,"B":100,"Br":95}
+ 

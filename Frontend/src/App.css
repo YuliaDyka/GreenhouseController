@@ -1,0 +1,30 @@
+.header {
+  padding: 20px;
+  height: 20px;
+  background-color: rgba(109, 164, 127, 0.763);
+  width: 97,5%;
+  
+}
+
+.header-name{
+  margin: 20px;
+}
+
+.action-block {
+  display: flex;
+  margin-left: 70px;
+}
+.btn-secondary {
+  margin: 10px;
+}
+
+.screen {
+  border: 1px solid black;
+  margin: 1px 60px 0 60px;
+  height: 500px;
+  background-color: antiquewhite;
+}
+
+.footer{
+  padding: 20px;
+}
