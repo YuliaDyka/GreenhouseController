@@ -104,6 +104,7 @@ void FanController::setTargetCps(const float cps)
         m_targetCps = 0;
         m_pwmValue = 0;
         analogWrite(FAN_PWM_PIN, m_pwmValue);
+        m_averager->clear();
         return;
     } else if (cps > 270) {
         m_targetCps = 270;

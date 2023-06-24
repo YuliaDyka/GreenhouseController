@@ -29,6 +29,7 @@ public:
     void setSpeed(const float speed);
 
     State getState() const;
+    int currentPosition() const;
 
 private:
     void init();

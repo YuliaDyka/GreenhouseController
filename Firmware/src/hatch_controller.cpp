@@ -67,7 +67,7 @@ void HatchController::update()
         const auto isOpening = m_moveTo < m_motor->currentPosition();
         if ((isOpening && isOpened) || (!isOpening && isClosed)) {
             m_state = State::READY;
-            Serial.println("---!!! ALARM !!!---");
+            // Serial.println("---!!! ALARM !!!---");
             return;
         }
 
@@ -83,7 +83,7 @@ void HatchController::update()
         const auto isOpening = m_manualPosition < m_motor->currentPosition();
         if ((isOpening && isOpened) || (!isOpening && isClosed)) {
             m_state = State::READY;
-            Serial.println("---!!! ALARM !!!---");
+            // Serial.println("---!!! ALARM !!!---");
             return;
         }
 
@@ -126,10 +126,10 @@ void HatchController::requestOpenHatch(const uint16_t percent)
         m_motor->moveTo(m_moveTo);
         
         m_state = State::MOVING;
-        Serial.print("-- Move to: ");
-        Serial.println(m_moveTo);
-        Serial.print("-- Curr pos: ");
-        Serial.println(m_motor->currentPosition());
+        // Serial.print("-- Move to: ");
+        // Serial.println(m_moveTo);
+        // Serial.print("-- Curr pos: ");
+        // Serial.println(m_motor->currentPosition());
     }
 }
 
@@ -162,6 +162,13 @@ void HatchController::setSpeed(const float speed)
 HatchController::State HatchController::getState() const
 {
     return m_state;
+}
+
+int HatchController::currentPosition() const
+{
+    const long currentOpened = m_motor->currentPosition() - m_closedPosition;
+    const long fullDistance = m_openedPosition - m_closedPosition;
+    return 100 * currentOpened / fullDistance; 
 }
 
 void HatchController::init()

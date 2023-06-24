@@ -61,6 +61,7 @@ void UartController::update()
     case SET_FAN_PWM_PERCENT:
         break;
     case GET_FAN_INFO:
+        sendResponse(id, DONE);
         break;
     case SET_LEDS_PWM:
         break;                                                                                            
@@ -99,6 +100,7 @@ void UartController::update()
     case GET_LEDS_PWM:
         break;
     case GET_LEDS_SHADE:
+        sendResponse(id, DONE);
         break;
     case REQ_HATCH_RECALIBRATE:
         break;                                                                        
@@ -116,6 +118,9 @@ void UartController::update()
         }
         break;
     }
+    case GET_HATCH_POS:
+        sendResponse(id, DONE);
+        break;
     default:
         sendError(WRONG_COMMAND_ID);
         break;
@@ -125,9 +130,9 @@ void UartController::update()
 void UartController::sendResponse(CommandID id, ResponseResult result)
 {
     m_jsonBuffer.clear();
-    m_jsonBuffer[MESSAGE_TYPE_PROP]         = RESPONSE;
-    m_jsonBuffer[MESSAGE_ID_PROP]           = id;
-    m_jsonBuffer[RESPONSE_RESULT_PROP]      = result;
+    m_jsonBuffer[MESSAGE_TYPE_PROP]     = RESPONSE;
+    m_jsonBuffer[MESSAGE_ID_PROP]       = id;
+    m_jsonBuffer[RESPONSE_RESULT_PROP]  = result;
     switch (id)
     {
     case GET_SENSORS:
@@ -139,12 +144,25 @@ void UartController::sendResponse(CommandID id, ResponseResult result)
         }
         break;
     case GET_FAN_INFO:
+        if (result == DONE) {
+            m_jsonBuffer[CPS_PROP]          = m_fanController->averageCps();
+        }
         break;
     case GET_LEDS_PWM:
         break;
     case GET_LEDS_SHADE:
+        if (result == DONE) {
+            const auto colors = m_ledController->lightColor();
+            m_jsonBuffer[RED_COLOR_PROP]    = colors[LedController::RED];
+            m_jsonBuffer[GREEN_COLOR_PROP]  = colors[LedController::GREEN];
+            m_jsonBuffer[BLUE_COLOR_PROP]   = colors[LedController::BLUE];
+            m_jsonBuffer[BRIGHTNESS_PROP]   = m_ledController->lightBrightness();
+        }
         break;
     case GET_HATCH_POS:
+        if (result == DONE) {
+            m_jsonBuffer[HATCH_POS_PROP] = m_hatchController->currentPosition();
+        }
         break;                    
     default:
         break;

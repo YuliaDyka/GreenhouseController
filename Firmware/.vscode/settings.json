@@ -56,5 +56,6 @@
     "cSpell.words": [
         "Averager",
         "leds"
-    ]
+    ],
+    "cmake.configureOnOpen": true
 }
