@@ -1,8 +1,8 @@
 from flask import Flask
 from serial.tools.list_ports import comports
 import threading
-from serial_controller import SerialController
-from server import Server
+from src.serial_controller import SerialController
+from src.server import Server
 
 class App:   
     def __init__(self):

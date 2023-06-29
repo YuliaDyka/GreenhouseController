@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from flask import request
-from serial_controller import SerialController
+from src.serial_controller import SerialController
 import json
 
 class Server:

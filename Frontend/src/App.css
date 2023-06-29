@@ -1,30 +1,99 @@
 .header {
   padding: 20px;
-  height: 20px;
-  background-color: rgba(109, 164, 127, 0.763);
-  width: 97,5%;
-  
+  height: 28px;
+  background-color: rgb(47, 108, 68);
+  width: 100%;
 }
 
-.header-name{
-  margin: 20px;
-}
-
-.action-block {
-  display: flex;
-  margin-left: 70px;
-}
-.btn-secondary {
-  margin: 10px;
-}
-
-.screen {
+.action-popup {
   border: 1px solid black;
-  margin: 1px 60px 0 60px;
-  height: 500px;
+  margin: 20px 380px;
+  min-height: 500px;
+  height: auto;
   background-color: antiquewhite;
 }
 
-.footer{
-  padding: 20px;
+.action-block hr {
+  margin: 10px;
+}
+.action-block h5 {
+  text-align: center;
+  margin-bottom: -5px;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  margin: -13px 25px;
+}
+.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+  margin-right: 12px;
+}
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  background-color: white;
+}
+
+.port-blocK {
+  display: flex;
+  margin-bottom: -26px;
+  justify-content: center;
+}
+.btn-secondary {
+  margin-top: 25px;
+}
+
+.port-block-status {
+  margin: -10px 0 0 15px;
+}
+
+.css-u21dsm {
+  padding: 0 !important;
+}
+
+.gorizont {
+  display: flex;
+}
+.color-block {
+  border: 1px solid rgb(233, 226, 226);
+  padding: 3px;
+  width: 50%;
+  margin: 3px;
+  display: flex;
+  justify-content: flex-end;
+}
+.brightness-block-info {
+  border: 1px solid rgb(233, 226, 226);
+  padding: 3px;
+  width: 50%;
+  margin: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-lable {
+  margin: 5px;
+}
+.btn-getInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.slider-blocK {
+  width: 100%;
+  padding: 10px;
+  display: block;
+}
+
+.input-value {
+  margin: 1px 5px;
+  max-height: 20px;
+  max-width: 44px;
+  width: auto;
+}
+
+.colors-aplay {
+  display: flex;
+  justify-content: center;
+}
+.btn-colors-aplay {
+  width: 300px;
 }
